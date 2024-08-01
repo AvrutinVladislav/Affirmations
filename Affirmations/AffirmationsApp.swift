@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct AffirmationsApp: App {
+    
+    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AffirmationsView()
+//            if isFirstLaunch {
+//                
+//            }
+//            else {
+//                AffirmationsView()
+//            }
         }
     }
 }

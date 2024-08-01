@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		57BFE6CC2C5A13AC00282369 /* AffirmationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6CB2C5A13AC00282369 /* AffirmationsApp.swift */; };
-		57BFE6CE2C5A13AC00282369 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6CD2C5A13AC00282369 /* ContentView.swift */; };
+		57BFE6CE2C5A13AC00282369 /* AffirmationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6CD2C5A13AC00282369 /* AffirmationsView.swift */; };
 		57BFE6D02C5A13AD00282369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BFE6CF2C5A13AD00282369 /* Assets.xcassets */; };
 		57BFE6D32C5A13AD00282369 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BFE6D22C5A13AD00282369 /* Preview Assets.xcassets */; };
+		57BFE6DA2C5A1FBC00282369 /* AffirmationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6D92C5A1FBB00282369 /* AffirmationsViewModel.swift */; };
+		57BFE6E42C5A741600282369 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6E32C5A741600282369 /* SettingsView.swift */; };
+		57BFE6E62C5A742500282369 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6E52C5A742500282369 /* SettingsViewModel.swift */; };
+		57BFE6E82C5A869B00282369 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6E72C5A869B00282369 /* SettingsTableViewCell.swift */; };
+		57BFE6EA2C5A945400282369 /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6E92C5A945400282369 /* SettingsCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		57BFE6C82C5A13AC00282369 /* Affirmations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Affirmations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BFE6CB2C5A13AC00282369 /* AffirmationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsApp.swift; sourceTree = "<group>"; };
-		57BFE6CD2C5A13AC00282369 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		57BFE6CD2C5A13AC00282369 /* AffirmationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsView.swift; sourceTree = "<group>"; };
 		57BFE6CF2C5A13AD00282369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57BFE6D22C5A13AD00282369 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		57BFE6D92C5A1FBB00282369 /* AffirmationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsViewModel.swift; sourceTree = "<group>"; };
+		57BFE6E32C5A741600282369 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		57BFE6E52C5A742500282369 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		57BFE6E72C5A869B00282369 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		57BFE6E92C5A945400282369 /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,11 @@
 		57BFE6CA2C5A13AC00282369 /* Affirmations */ = {
 			isa = PBXGroup;
 			children = (
+				57BFE6E22C5A73F400282369 /* Settings */,
+				57BFE6DC2C5A1FD500282369 /* Models */,
+				57BFE6DB2C5A1FC100282369 /* Affirmations */,
 				57BFE6CB2C5A13AC00282369 /* AffirmationsApp.swift */,
-				57BFE6CD2C5A13AC00282369 /* ContentView.swift */,
+				57BFE6CD2C5A13AC00282369 /* AffirmationsView.swift */,
 				57BFE6CF2C5A13AD00282369 /* Assets.xcassets */,
 				57BFE6D12C5A13AD00282369 /* Preview Content */,
 			);
@@ -65,6 +78,32 @@
 				57BFE6D22C5A13AD00282369 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57BFE6DB2C5A1FC100282369 /* Affirmations */ = {
+			isa = PBXGroup;
+			children = (
+				57BFE6D92C5A1FBB00282369 /* AffirmationsViewModel.swift */,
+			);
+			path = Affirmations;
+			sourceTree = "<group>";
+		};
+		57BFE6DC2C5A1FD500282369 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57BFE6E92C5A945400282369 /* SettingsCellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57BFE6E22C5A73F400282369 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				57BFE6E32C5A741600282369 /* SettingsView.swift */,
+				57BFE6E52C5A742500282369 /* SettingsViewModel.swift */,
+				57BFE6E72C5A869B00282369 /* SettingsTableViewCell.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57BFE6CE2C5A13AC00282369 /* ContentView.swift in Sources */,
+				57BFE6CE2C5A13AC00282369 /* AffirmationsView.swift in Sources */,
+				57BFE6E82C5A869B00282369 /* SettingsTableViewCell.swift in Sources */,
+				57BFE6DA2C5A1FBC00282369 /* AffirmationsViewModel.swift in Sources */,
+				57BFE6EA2C5A945400282369 /* SettingsCellModel.swift in Sources */,
+				57BFE6E42C5A741600282369 /* SettingsView.swift in Sources */,
 				57BFE6CC2C5A13AC00282369 /* AffirmationsApp.swift in Sources */,
+				57BFE6E62C5A742500282369 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -279,6 +323,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +352,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
