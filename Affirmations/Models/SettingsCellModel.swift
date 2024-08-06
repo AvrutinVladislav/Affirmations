@@ -9,7 +9,7 @@ import Foundation
 
 struct SettingsCellModel: Hashable, Identifiable {
     var id = UUID()
-    var title: String
+    var title: Titles
     var firstChoice: String
     var secondChoice: String
 }

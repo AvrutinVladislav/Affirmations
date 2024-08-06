@@ -9,36 +9,38 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel = SettingsViewModel()
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var settings: SettingsModel
     
     var body: some View {
-        
-        VStack {
-            HStack{
-                
-                Button{
-                    presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image(systemName: "chevron.backward")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 10, height: 20)
+        ZStack {
+            VStack {
+                HStack{
+                    Button{
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 10, height: 20)
+                            .foregroundStyle(.black)
+                    }
+                    Spacer()
+                    Text("Settings".localized())
+                        .font(.title)
+                        .foregroundStyle(.black)
+                    Spacer()
                 }
-                Spacer()
-                Text("Settings")
-                    .font(.title)
-                Spacer()
+                .padding(.init(top: 20, leading: 20, bottom: 0, trailing: 0))
+                List(viewModel.settingsCells) { cell in
+                    SettingsTableViewCell(model: cell, settings: settings)
+                }
+                .background {
+                    viewModel.selectBackgroundColor(settings)
+                }
+                .scrollContentBackground(.hidden)
             }
-            .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 0))
-            List(viewModel.settingsCells) { cell in
-                SettingsTableViewCell(model: cell)
-            }
-        }
+        } 
     }
-   
-}
-
-#Preview {
-    SettingsView()
 }

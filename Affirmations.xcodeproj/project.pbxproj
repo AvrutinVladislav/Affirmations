@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		571E82582C62307500F6E2C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 571E82562C62307500F6E2C0 /* Localizable.strings */; };
+		571E825B2C6230EC00F6E2C0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571E825A2C6230EC00F6E2C0 /* String+Extension.swift */; };
+		577E12442C5B708F005903D8 /* SelectCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E12432C5B708F005903D8 /* SelectCategoryView.swift */; };
+		577E124A2C5B7587005903D8 /* SelectBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E12492C5B7587005903D8 /* SelectBackgroundView.swift */; };
+		577E124C2C5B75E0005903D8 /* SelectGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E124B2C5B75E0005903D8 /* SelectGenderView.swift */; };
+		577E124E2C5BA1AB005903D8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E124D2C5BA1AB005903D8 /* OnboardingViewModel.swift */; };
+		577E12512C5BB8DA005903D8 /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E12502C5BB8DA005903D8 /* SettingsTableViewCellViewModel.swift */; };
+		577EAFB62C5CB0AF0074D143 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EAFB52C5CB0AF0074D143 /* SettingsModel.swift */; };
 		57BFE6CC2C5A13AC00282369 /* AffirmationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6CB2C5A13AC00282369 /* AffirmationsApp.swift */; };
 		57BFE6CE2C5A13AC00282369 /* AffirmationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6CD2C5A13AC00282369 /* AffirmationsView.swift */; };
 		57BFE6D02C5A13AD00282369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BFE6CF2C5A13AD00282369 /* Assets.xcassets */; };
@@ -19,6 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		571E82572C62307500F6E2C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		571E82592C62307900F6E2C0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		571E825A2C6230EC00F6E2C0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		577E12432C5B708F005903D8 /* SelectCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryView.swift; sourceTree = "<group>"; };
+		577E12492C5B7587005903D8 /* SelectBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBackgroundView.swift; sourceTree = "<group>"; };
+		577E124B2C5B75E0005903D8 /* SelectGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderView.swift; sourceTree = "<group>"; };
+		577E124D2C5BA1AB005903D8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		577E12502C5BB8DA005903D8 /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		577EAFB52C5CB0AF0074D143 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		57BFE6C82C5A13AC00282369 /* Affirmations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Affirmations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BFE6CB2C5A13AC00282369 /* AffirmationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsApp.swift; sourceTree = "<group>"; };
 		57BFE6CD2C5A13AC00282369 /* AffirmationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsView.swift; sourceTree = "<group>"; };
@@ -42,6 +59,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		571E825C2C62354000F6E2C0 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				571E825A2C6230EC00F6E2C0 /* String+Extension.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		577E12422C5B7016005903D8 /* OnboardingViews */ = {
+			isa = PBXGroup;
+			children = (
+				577E12432C5B708F005903D8 /* SelectCategoryView.swift */,
+				577E124B2C5B75E0005903D8 /* SelectGenderView.swift */,
+				577E12492C5B7587005903D8 /* SelectBackgroundView.swift */,
+				577E124D2C5BA1AB005903D8 /* OnboardingViewModel.swift */,
+			);
+			path = OnboardingViews;
+			sourceTree = "<group>";
+		};
+		577E124F2C5BB8B0005903D8 /* SettingsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				57BFE6E72C5A869B00282369 /* SettingsTableViewCell.swift */,
+				577E12502C5BB8DA005903D8 /* SettingsTableViewCellViewModel.swift */,
+			);
+			path = SettingsTableViewCell;
+			sourceTree = "<group>";
+		};
 		57BFE6BF2C5A13AC00282369 = {
 			isa = PBXGroup;
 			children = (
@@ -61,13 +106,16 @@
 		57BFE6CA2C5A13AC00282369 /* Affirmations */ = {
 			isa = PBXGroup;
 			children = (
+				577E12422C5B7016005903D8 /* OnboardingViews */,
 				57BFE6E22C5A73F400282369 /* Settings */,
 				57BFE6DC2C5A1FD500282369 /* Models */,
 				57BFE6DB2C5A1FC100282369 /* Affirmations */,
 				57BFE6CB2C5A13AC00282369 /* AffirmationsApp.swift */,
 				57BFE6CD2C5A13AC00282369 /* AffirmationsView.swift */,
+				571E825C2C62354000F6E2C0 /* Extentions */,
 				57BFE6CF2C5A13AD00282369 /* Assets.xcassets */,
 				57BFE6D12C5A13AD00282369 /* Preview Content */,
+				571E82562C62307500F6E2C0 /* Localizable.strings */,
 			);
 			path = Affirmations;
 			sourceTree = "<group>";
@@ -92,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				57BFE6E92C5A945400282369 /* SettingsCellModel.swift */,
+				577EAFB52C5CB0AF0074D143 /* SettingsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,9 +148,9 @@
 		57BFE6E22C5A73F400282369 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				577E124F2C5BB8B0005903D8 /* SettingsTableViewCell */,
 				57BFE6E32C5A741600282369 /* SettingsView.swift */,
 				57BFE6E52C5A742500282369 /* SettingsViewModel.swift */,
-				57BFE6E72C5A869B00282369 /* SettingsTableViewCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -122,6 +171,8 @@
 			dependencies = (
 			);
 			name = Affirmations;
+			packageProductDependencies = (
+			);
 			productName = Affirmations;
 			productReference = 57BFE6C82C5A13AC00282369 /* Affirmations.app */;
 			productType = "com.apple.product-type.application";
@@ -148,8 +199,11 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 57BFE6BF2C5A13AC00282369;
+			packageReferences = (
+			);
 			productRefGroup = 57BFE6C92C5A13AC00282369 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -165,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BFE6D32C5A13AD00282369 /* Preview Assets.xcassets in Resources */,
+				571E82582C62307500F6E2C0 /* Localizable.strings in Resources */,
 				57BFE6D02C5A13AD00282369 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,14 +234,33 @@
 				57BFE6CE2C5A13AC00282369 /* AffirmationsView.swift in Sources */,
 				57BFE6E82C5A869B00282369 /* SettingsTableViewCell.swift in Sources */,
 				57BFE6DA2C5A1FBC00282369 /* AffirmationsViewModel.swift in Sources */,
+				577E124C2C5B75E0005903D8 /* SelectGenderView.swift in Sources */,
 				57BFE6EA2C5A945400282369 /* SettingsCellModel.swift in Sources */,
 				57BFE6E42C5A741600282369 /* SettingsView.swift in Sources */,
+				577E12442C5B708F005903D8 /* SelectCategoryView.swift in Sources */,
+				577E124A2C5B7587005903D8 /* SelectBackgroundView.swift in Sources */,
+				571E825B2C6230EC00F6E2C0 /* String+Extension.swift in Sources */,
+				577E124E2C5BA1AB005903D8 /* OnboardingViewModel.swift in Sources */,
 				57BFE6CC2C5A13AC00282369 /* AffirmationsApp.swift in Sources */,
 				57BFE6E62C5A742500282369 /* SettingsViewModel.swift in Sources */,
+				577E12512C5BB8DA005903D8 /* SettingsTableViewCellViewModel.swift in Sources */,
+				577EAFB62C5CB0AF0074D143 /* SettingsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		571E82562C62307500F6E2C0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				571E82572C62307500F6E2C0 /* en */,
+				571E82592C62307900F6E2C0 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		57BFE6D42C5A13AD00282369 /* Debug */ = {
