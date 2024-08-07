@@ -11,37 +11,22 @@ struct SettingsTableViewCell: View {
     
     @StateObject var viewModel = SettingsTableViewCellViewModel()
     @Environment(\.locale) var locale
-    @AppStorage("language") var language: String = "en"
-    var model: SettingsCellModel
     @ObservedObject var settings: SettingsModel
     @State var isFirstButtonDidTap: Bool = true
+    
+    var model: SettingsCellModel
     
     var body: some View {
         
         HStack {
             Text(model.title.title.localized())
-                .padding(.init(top: 15, leading: 0, bottom: 15, trailing: 0))
+                .padding(.init(top: 15, leading: 10, bottom: 15, trailing: 0))
                 .multilineTextAlignment(.center)
                 .font(.system(size: 16, weight: .regular))
             Spacer()
             HStack {
                 Button(action: {
-                    switch model.title {
-                    case .category:
-                        break
-                    case .gender:
-                        break
-                    case .backgroundColor:
-                        switch settings.backgroundColor {
-                        case .blue:
-                            settings.backgroundColor = .red
-                        case .red:
-                            settings.backgroundColor = .blue
-                        }
-                    case .language:
-                        language = Languages.rus.language
-                        settings.language = .rus
-                    }
+                    viewModel.buttonDidTap(settings, model, isFirstButtonDidTap)
                 },
                        label: {
                     Text(model.firstChoice.localized())
@@ -50,28 +35,13 @@ struct SettingsTableViewCell: View {
                 })
                 .frame(width: 85, height: 50)
                 .background {
-                    model.firstChoice == viewModel.configureButton(settings, model)  ? Color.white : Color.black
+                    model.firstChoice == viewModel.configureButton(settings, model)  ? Color.green : Color.red
                 }
                 .buttonBorderShape(.capsule)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 
                 Button(action: {
-                    switch model.title {
-                    case .category:
-                        break
-                    case .gender:
-                        break
-                    case .backgroundColor:
-                        switch settings.backgroundColor {
-                        case .blue:
-                            settings.backgroundColor = .red
-                        case .red:
-                            settings.backgroundColor = .blue
-                        }
-                    case .language:
-                        language = Languages.eng.language
-                        settings.language = .eng
-                    }
+                    isFirstButtonDidTap.toggle()
                 },
                        label: {
                     Text(model.secondChoice.localized())
@@ -85,7 +55,7 @@ struct SettingsTableViewCell: View {
                         cornerRadius: 12,
                         style: .continuous
                     )
-                    .fill(model.secondChoice == viewModel.configureButton(settings, model)  ? Color.white : Color.black)
+                    .fill(model.secondChoice == viewModel.configureButton(settings, model)  ? Color.green : Color.red)
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 12))
             }
@@ -94,8 +64,5 @@ struct SettingsTableViewCell: View {
             Color.black.opacity(0.1)
         }
         .clipShape(RoundedRectangle(cornerRadius: 12))
-        .onAppear {
-            isFirstButtonDidTap = model.firstChoice == viewModel.configureButton(settings, model) ? true : false
-        }
     }
 }

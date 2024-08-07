@@ -21,7 +21,7 @@ struct AffirmationsView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                viewModel.selectBackgroundColor()
+                viewModel.selectBackgroundColor(settings)
                 VStack {
                     HStack {
                         Spacer()
@@ -44,7 +44,7 @@ struct AffirmationsView: View {
                         ZStack {
                             GeometryReader { proxy in
                                 TabView() {
-                                    ForEach(viewModel.selectCategory(), id: \.self) { index in
+                                    ForEach(viewModel.selectCategory(settings), id: \.self) { index in
                                         VStack() {
                                             Text(index.localized())
                                                 .font(.largeTitle)

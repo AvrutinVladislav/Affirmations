@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class SettingsTableViewCellViewModel: ObservableObject {
+    
+    @AppStorage("language") var language: String = "en"
     
     func configureButton(_ settings: SettingsModel, _ cellModel: SettingsCellModel) -> String {
         switch cellModel.title {
@@ -22,21 +25,35 @@ class SettingsTableViewCellViewModel: ObservableObject {
         }
     }
     
-    func buttonDidTap(_ settings: SettingsModel, _ cellModel: SettingsCellModel, _ isActiveFirstButton: Bool) {
+    func buttonDidTap(_ settings: SettingsModel, _ cellModel: SettingsCellModel, _ isFirstButtonDidTap: Bool) {
         switch cellModel.title {
         case .category:
-            break
+            if isFirstButtonDidTap {
+                settings.category = .love
+            } else {
+                settings.category = .friendship
+            }
         case .gender:
-            break
+            if isFirstButtonDidTap {
+                settings.gender = .male
+            } else {
+                settings.gender = .female
+            }
         case .backgroundColor:
-            switch settings.backgroundColor {
-            case .blue:
-                settings.backgroundColor = .red
-            case .red:
+            if isFirstButtonDidTap {
                 settings.backgroundColor = .blue
+            } else {
+                settings.backgroundColor = .red      
             }
         case .language:
-            break
+            if isFirstButtonDidTap {
+                language = Languages.eng.language
+                settings.language = .eng
+            }
+            else {
+                language = Languages.rus.language
+                settings.language = .rus
+            }
         }
     }
     

@@ -18,12 +18,22 @@ class AffirmationsViewModel: ObservableObject {
     
     @Published var friendshipAffermations = ["I am surrounded by supportive and loving friends", "I attract positive and loyal friendships into my life", "My friends and I share mutual respect and trust", "I am a kind and caring friend, and I receive the same in return", "My friendships are filled with joy, laughter, and understanding", "I am grateful for the amazing friends in my life", "I nurture and cherish my friendships", "I attract friends who support and uplift me", "My friends and I grow together in love and harmony", "I am a magnet for genuine and lasting friendships"]
     
-    func selectCategory() -> [String] {
-        return category == "Love" ? loveAffermations : friendshipAffermations
+    func selectCategory(_ settings: SettingsModel) -> [String] {
+        switch settings.category {
+        case .love:
+            return loveAffermations
+        case .friendship:
+            return friendshipAffermations
+        }
     }
     
-    func selectBackgroundColor() -> Color {
-        return backgroundColor == "Blue" ? Color.blue : Color.red
+    func selectBackgroundColor(_ settings: SettingsModel) -> Color {
+        switch settings.backgroundColor {
+        case .blue:
+            return Color.blue
+        case .red:
+            return Color.red
+        }
     }
     
     func configureSettings(_ settings: SettingsModel, _ category: String, _ gender: String, _ backgroundColor: String) {
@@ -43,27 +53,28 @@ class AffirmationsViewModel: ObservableObject {
             return .love
         }
     }
-        
-        func getGender(from value: String) -> Gender {
-            switch value {
-            case "Male":
-                return .male
-            case "Female":
-                return .female
-            default:
-                return .male
-            }
+    
+    func getGender(from value: String) -> Gender {
+        switch value {
+        case "Male":
+            return .male
+        case "Female":
+            return .female
+        default:
+            return .male
         }
-        
-        func getBackgroundColor(from value: String) -> Background {
-            switch value {
-            case "Blue":
-                return .blue
-            case "Red":
-                return .red
-            default:
-                return .blue
-            }
-        }
-        
     }
+    
+    
+    func getBackgroundColor(from value: String) -> Background {
+        switch value {
+        case "Blue":
+            return .blue
+        case "Red":
+            return .red
+        default:
+            return .blue
+        }
+    }
+    
+}
