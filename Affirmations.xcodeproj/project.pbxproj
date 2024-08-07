@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		571E82582C62307500F6E2C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 571E82562C62307500F6E2C0 /* Localizable.strings */; };
 		571E825B2C6230EC00F6E2C0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571E825A2C6230EC00F6E2C0 /* String+Extension.swift */; };
+		5762DAA02C636314004755A8 /* OnboardingBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5762DA9F2C636314004755A8 /* OnboardingBaseView.swift */; };
+		5762DAA32C637B5E004755A8 /* AffirmationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5762DAA22C637B5E004755A8 /* AffirmationsModel.swift */; };
+		5762DAA72C6380A1004755A8 /* JSONProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5762DAA62C6380A1004755A8 /* JSONProvider.swift */; };
+		5762DAAF2C638568004755A8 /* JsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5762DAAE2C638568004755A8 /* JsonData.json */; };
 		577E12442C5B708F005903D8 /* SelectCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E12432C5B708F005903D8 /* SelectCategoryView.swift */; };
 		577E124A2C5B7587005903D8 /* SelectBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E12492C5B7587005903D8 /* SelectBackgroundView.swift */; };
 		577E124C2C5B75E0005903D8 /* SelectGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E124B2C5B75E0005903D8 /* SelectGenderView.swift */; };
@@ -30,6 +34,10 @@
 		571E82572C62307500F6E2C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		571E82592C62307900F6E2C0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		571E825A2C6230EC00F6E2C0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		5762DA9F2C636314004755A8 /* OnboardingBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBaseView.swift; sourceTree = "<group>"; };
+		5762DAA22C637B5E004755A8 /* AffirmationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsModel.swift; sourceTree = "<group>"; };
+		5762DAA62C6380A1004755A8 /* JSONProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONProvider.swift; sourceTree = "<group>"; };
+		5762DAAE2C638568004755A8 /* JsonData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonData.json; sourceTree = "<group>"; };
 		577E12432C5B708F005903D8 /* SelectCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryView.swift; sourceTree = "<group>"; };
 		577E12492C5B7587005903D8 /* SelectBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBackgroundView.swift; sourceTree = "<group>"; };
 		577E124B2C5B75E0005903D8 /* SelectGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderView.swift; sourceTree = "<group>"; };
@@ -67,6 +75,15 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		5762DAA12C6369E6004755A8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5762DAA62C6380A1004755A8 /* JSONProvider.swift */,
+				5762DAAE2C638568004755A8 /* JsonData.json */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		577E12422C5B7016005903D8 /* OnboardingViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +91,7 @@
 				577E124B2C5B75E0005903D8 /* SelectGenderView.swift */,
 				577E12492C5B7587005903D8 /* SelectBackgroundView.swift */,
 				577E124D2C5BA1AB005903D8 /* OnboardingViewModel.swift */,
+				5762DA9F2C636314004755A8 /* OnboardingBaseView.swift */,
 			);
 			path = OnboardingViews;
 			sourceTree = "<group>";
@@ -106,6 +124,7 @@
 		57BFE6CA2C5A13AC00282369 /* Affirmations */ = {
 			isa = PBXGroup;
 			children = (
+				5762DAA12C6369E6004755A8 /* Helpers */,
 				577E12422C5B7016005903D8 /* OnboardingViews */,
 				57BFE6E22C5A73F400282369 /* Settings */,
 				57BFE6DC2C5A1FD500282369 /* Models */,
@@ -141,6 +160,7 @@
 			children = (
 				57BFE6E92C5A945400282369 /* SettingsCellModel.swift */,
 				577EAFB52C5CB0AF0074D143 /* SettingsModel.swift */,
+				5762DAA22C637B5E004755A8 /* AffirmationsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BFE6D32C5A13AD00282369 /* Preview Assets.xcassets in Resources */,
+				5762DAAF2C638568004755A8 /* JsonData.json in Resources */,
 				571E82582C62307500F6E2C0 /* Localizable.strings in Resources */,
 				57BFE6D02C5A13AD00282369 /* Assets.xcassets in Resources */,
 			);
@@ -237,10 +258,13 @@
 				577E124C2C5B75E0005903D8 /* SelectGenderView.swift in Sources */,
 				57BFE6EA2C5A945400282369 /* SettingsCellModel.swift in Sources */,
 				57BFE6E42C5A741600282369 /* SettingsView.swift in Sources */,
+				5762DAA32C637B5E004755A8 /* AffirmationsModel.swift in Sources */,
 				577E12442C5B708F005903D8 /* SelectCategoryView.swift in Sources */,
 				577E124A2C5B7587005903D8 /* SelectBackgroundView.swift in Sources */,
 				571E825B2C6230EC00F6E2C0 /* String+Extension.swift in Sources */,
 				577E124E2C5BA1AB005903D8 /* OnboardingViewModel.swift in Sources */,
+				5762DAA72C6380A1004755A8 /* JSONProvider.swift in Sources */,
+				5762DAA02C636314004755A8 /* OnboardingBaseView.swift in Sources */,
 				57BFE6CC2C5A13AC00282369 /* AffirmationsApp.swift in Sources */,
 				57BFE6E62C5A742500282369 /* SettingsViewModel.swift in Sources */,
 				577E12512C5BB8DA005903D8 /* SettingsTableViewCellViewModel.swift in Sources */,

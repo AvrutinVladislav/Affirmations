@@ -34,7 +34,7 @@ struct SettingsView: View {
                 }
                 .padding(.init(top: 20, leading: 20, bottom: 0, trailing: 0))
                 List(viewModel.settingsCells) { cell in
-                    SettingsTableViewCell(model: cell, settings: settings)
+                    SettingsTableViewCell(settings: settings, model: cell)
                 }
                 .background {
                     viewModel.selectBackgroundColor(settings)

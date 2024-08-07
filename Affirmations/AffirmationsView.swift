@@ -16,7 +16,8 @@ struct AffirmationsView: View {
     @State private var moveToSettings = false
     
     @StateObject private var viewModel = AffirmationsViewModel()
-    @StateObject var settings = SettingsModel()
+    @StateObject private var settings = SettingsModel()
+    @StateObject private var jsonProvider = JSONProvider()
     
     var body: some View {
         NavigationStack {
@@ -44,7 +45,7 @@ struct AffirmationsView: View {
                         ZStack {
                             GeometryReader { proxy in
                                 TabView() {
-                                    ForEach(viewModel.selectCategory(settings), id: \.self) { index in
+                                    ForEach(viewModel.selectCategory(settings, jsonProvider.affirmations), id: \.self) { index in
                                         VStack() {
                                             Text(index.localized())
                                                 .font(.largeTitle)
@@ -80,6 +81,7 @@ struct AffirmationsView: View {
         }
         .onAppear {
             viewModel.configureSettings(settings, category, gender, backgroundColor)
+            jsonProvider.getData()
         }
     }
     

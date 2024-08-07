@@ -13,50 +13,17 @@ struct SelectCategoryView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Spacer()
-                Text(Titles.category.title.localized())
-                    .font(.system(size: 35, weight: .medium))
-                    .padding(.init(top: 0, leading: 20, bottom: 50, trailing: 20))
-                
-                Button {
-                    viewModel.selectCategory("Love")
-                    showSelectGenderView.toggle()
-                } label: {
-                    Text("Love".localized())
-                        .foregroundStyle(.white)
-                        .font(.system(size: 20, weight: .medium))
-                }
-                .frame(width: 150, height: 50)
-                .background {
-                    Color.black
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .padding()
-                
-                Button {
-                    viewModel.selectCategory = "Friendship"
-                    showSelectGenderView.toggle()
-                } label: {
-                    Text("Friendship".localized())
-                        .foregroundStyle(.white)
-                        .font(.system(size: 20, weight: .medium))
-                }
-                .frame(width: 150, height: 50)
-                .background {
-                    Color.black
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                
-                Spacer()
-                
-            }
-            .foregroundStyle(.black)
+            OnboardingBaseView(title: Titles.category.title.localized(),
+                               firstButtonTitle: Categories.love.description.localized(),
+                               secondButtonTitle: Categories.friendship.description.localized(),
+                               firstButtonAction: {viewModel.selectCategory(Categories.love.description.localized())
+                                    showSelectGenderView.toggle() },
+                               secondButtonAction: {viewModel.selectCategory(Categories.friendship.description.localized())
+                                    showSelectGenderView.toggle() })
             .navigationDestination(isPresented: $showSelectGenderView) {
                 SelectGenderView()
                     .navigationBarBackButtonHidden(true)
-            }
-            
+            }            
         }
     }
 }

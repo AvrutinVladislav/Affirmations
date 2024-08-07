@@ -13,52 +13,23 @@ struct SelectGenderView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Spacer()
-                Text(Titles.gender.title.localized())
-                    .font(.system(size: 35, weight: .medium))
-                    .padding(.init(top: 0, leading: 20, bottom: 50, trailing: 20))
-                
-                Button {
-                    viewModel.selectGender("Male")
-                    showSelectBackgroundView.toggle()
-                } label: {
-                    Text("Male".localized())
-                        .foregroundStyle(.white)
-                        .font(.system(size: 20, weight: .medium))
-                }
-                .frame(width: 150, height: 50)
-                .background {
-                    Color.black
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .padding()
-                
-                Button {
-                    viewModel.selectGender("Female")
-                    showSelectBackgroundView.toggle()
-                } label: {
-                    Text("Female".localized())
-                        .foregroundStyle(.white)
-                        .font(.system(size: 20, weight: .medium))
-                }
-                .frame(width: 150, height: 50)
-                .background {
-                    Color.black
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                Spacer()
-                   
-            }
-            .foregroundStyle(.black)
+            OnboardingBaseView(title: Titles.category.title.localized(),
+                               firstButtonTitle: Gender.male.gender.localized(),
+                               secondButtonTitle: Gender.female.gender.localized(),
+                               firstButtonAction: {
+                viewModel.selectCategory(Gender.male.gender.localized())
+                showSelectBackgroundView.toggle()
+            },
+                               secondButtonAction: {
+                viewModel.selectCategory(Gender.female.gender.localized())
+                showSelectBackgroundView.toggle()
+            })
             .navigationDestination(isPresented: $showSelectBackgroundView) {
                 SelectBackgroundView()
                     .navigationBarBackButtonHidden(true)
             }
         }
     }
-    
-   
 }
 
 #Preview {
