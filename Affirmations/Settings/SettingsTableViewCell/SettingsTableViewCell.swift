@@ -30,7 +30,7 @@ struct SettingsTableViewCell: View {
             
             VStack(alignment: .trailing) {
                    Toggle("", isOn: $isFirstButtonDidTap)
-                    .toggleStyle(ColoredToggleStyle(
+                    .toggleStyle(CustomToggle(
                         label: model.firstChoice.localized(),
                         offColor: .red
                     ))
@@ -43,7 +43,7 @@ struct SettingsTableViewCell: View {
                     }
                 
                 Toggle("", isOn: $isSecondButtonDidTap)
-                 .toggleStyle(ColoredToggleStyle(
+                 .toggleStyle(CustomToggle(
                      label: model.secondChoice.localized(),
                      offColor: .red
                  ))

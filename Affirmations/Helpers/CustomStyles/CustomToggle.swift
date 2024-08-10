@@ -1,5 +1,5 @@
 //
-//  CustomToggleStyle.swift
+//  CustomToggle.swift
 //  Affirmations
 //
 //  Created by Vladislav Avrutin on 10.08.2024.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct ColoredToggleStyle: ToggleStyle {
+struct CustomToggle: ToggleStyle {
     var label = ""
     var onColor = Color(UIColor.green)
     var offColor = Color(UIColor.systemGray5)
