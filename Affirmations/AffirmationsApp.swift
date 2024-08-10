@@ -10,17 +10,18 @@ import SwiftUI
 @main
 struct AffirmationsApp: App {
     
-    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
-    @AppStorage("language") var language: String = "en"
+    @StateObject var defaultSettings = DefaultSettings()
     
     var body: some Scene {
         WindowGroup {
             
-            if isFirstLaunch {
+            if defaultSettings.isFirstLaunch {
                 SelectCategoryView()
+                    .environmentObject(defaultSettings)
             }
             else {
                 AffirmationsView()
+                    .environmentObject(defaultSettings)
             }
         }
     }

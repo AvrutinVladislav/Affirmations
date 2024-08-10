@@ -19,6 +19,8 @@
 		577E124E2C5BA1AB005903D8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E124D2C5BA1AB005903D8 /* OnboardingViewModel.swift */; };
 		577E12512C5BB8DA005903D8 /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E12502C5BB8DA005903D8 /* SettingsTableViewCellViewModel.swift */; };
 		577EAFB62C5CB0AF0074D143 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577EAFB52C5CB0AF0074D143 /* SettingsModel.swift */; };
+		579AB6952C678E2C00D7F59D /* CustomToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579AB6942C678E2C00D7F59D /* CustomToggleStyle.swift */; };
+		579AB6972C67999300D7F59D /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579AB6962C67999300D7F59D /* DefaultSettings.swift */; };
 		57BFE6CC2C5A13AC00282369 /* AffirmationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6CB2C5A13AC00282369 /* AffirmationsApp.swift */; };
 		57BFE6CE2C5A13AC00282369 /* AffirmationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BFE6CD2C5A13AC00282369 /* AffirmationsView.swift */; };
 		57BFE6D02C5A13AD00282369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BFE6CF2C5A13AD00282369 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		577E124D2C5BA1AB005903D8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		577E12502C5BB8DA005903D8 /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		577EAFB52C5CB0AF0074D143 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		579AB6942C678E2C00D7F59D /* CustomToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggleStyle.swift; sourceTree = "<group>"; };
+		579AB6962C67999300D7F59D /* DefaultSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettings.swift; sourceTree = "<group>"; };
 		57BFE6C82C5A13AC00282369 /* Affirmations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Affirmations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BFE6CB2C5A13AC00282369 /* AffirmationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsApp.swift; sourceTree = "<group>"; };
 		57BFE6CD2C5A13AC00282369 /* AffirmationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsView.swift; sourceTree = "<group>"; };
@@ -78,8 +82,10 @@
 		5762DAA12C6369E6004755A8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				579AB6932C678E0100D7F59D /* CustomStyles */,
 				5762DAA62C6380A1004755A8 /* JSONProvider.swift */,
 				5762DAAE2C638568004755A8 /* JsonData.json */,
+				579AB6962C67999300D7F59D /* DefaultSettings.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -103,6 +109,14 @@
 				577E12502C5BB8DA005903D8 /* SettingsTableViewCellViewModel.swift */,
 			);
 			path = SettingsTableViewCell;
+			sourceTree = "<group>";
+		};
+		579AB6932C678E0100D7F59D /* CustomStyles */ = {
+			isa = PBXGroup;
+			children = (
+				579AB6942C678E2C00D7F59D /* CustomToggleStyle.swift */,
+			);
+			path = CustomStyles;
 			sourceTree = "<group>";
 		};
 		57BFE6BF2C5A13AC00282369 = {
@@ -253,7 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BFE6CE2C5A13AC00282369 /* AffirmationsView.swift in Sources */,
+				579AB6972C67999300D7F59D /* DefaultSettings.swift in Sources */,
 				57BFE6E82C5A869B00282369 /* SettingsTableViewCell.swift in Sources */,
+				579AB6952C678E2C00D7F59D /* CustomToggleStyle.swift in Sources */,
 				57BFE6DA2C5A1FBC00282369 /* AffirmationsViewModel.swift in Sources */,
 				577E124C2C5B75E0005903D8 /* SelectGenderView.swift in Sources */,
 				57BFE6EA2C5A945400282369 /* SettingsCellModel.swift in Sources */,

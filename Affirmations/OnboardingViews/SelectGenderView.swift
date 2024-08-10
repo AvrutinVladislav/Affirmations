@@ -10,18 +10,18 @@ import SwiftUI
 struct SelectGenderView: View {
     @State private var showSelectBackgroundView = false
     @StateObject var viewModel = OnboardingViewModel()
+    @EnvironmentObject var defaultSettings: DefaultSettings
     
     var body: some View {
         NavigationStack {
-            OnboardingBaseView(title: Titles.category.title.localized(),
+            OnboardingBaseView(title: Titles.gender.title.localized(),
                                firstButtonTitle: Gender.male.gender.localized(),
                                secondButtonTitle: Gender.female.gender.localized(),
                                firstButtonAction: {
-                viewModel.selectCategory(Gender.male.gender.localized())
-                showSelectBackgroundView.toggle()
-            },
+                viewModel.selectGender(Gender.male.gender.localized(), defaultSettings)
+                showSelectBackgroundView.toggle()},
                                secondButtonAction: {
-                viewModel.selectCategory(Gender.female.gender.localized())
+                viewModel.selectGender(Gender.female.gender.localized(), defaultSettings)
                 showSelectBackgroundView.toggle()
             })
             .navigationDestination(isPresented: $showSelectBackgroundView) {

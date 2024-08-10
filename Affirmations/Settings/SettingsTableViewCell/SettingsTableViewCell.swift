@@ -12,7 +12,9 @@ struct SettingsTableViewCell: View {
     @StateObject var viewModel = SettingsTableViewCellViewModel()
     @Environment(\.locale) var locale
     @ObservedObject var settings: SettingsModel
-    @State var isFirstButtonDidTap: Bool = true
+    @State private var isFirstButtonDidTap: Bool = true
+    @State private var isSecondButtonDidTap: Bool = false
+    @EnvironmentObject var defaultSettings: DefaultSettings
     
     var model: SettingsCellModel
     
@@ -23,46 +25,44 @@ struct SettingsTableViewCell: View {
                 .padding(.init(top: 15, leading: 10, bottom: 15, trailing: 0))
                 .multilineTextAlignment(.center)
                 .font(.system(size: 16, weight: .regular))
+            
             Spacer()
-            HStack {
-                Button(action: {
-                    viewModel.buttonDidTap(settings, model, isFirstButtonDidTap)
-                },
-                       label: {
-                    Text(model.firstChoice.localized())
-                        .foregroundStyle( model.firstChoice == viewModel.configureButton(settings, model) ? .black : .white)
-                        .font(.system(size: 14, weight: .regular))
-                })
-                .frame(width: 85, height: 50)
-                .background {
-                    model.firstChoice == viewModel.configureButton(settings, model)  ? Color.green : Color.red
-                }
-                .buttonBorderShape(.capsule)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+            
+            VStack(alignment: .trailing) {
+                   Toggle("", isOn: $isFirstButtonDidTap)
+                    .toggleStyle(ColoredToggleStyle(
+                        label: model.firstChoice.localized(),
+                        offColor: .red
+                    ))
+                    .padding(.init(top: 10, leading: 0, bottom: 0, trailing: 0))
+                    .onChange(of: isFirstButtonDidTap) { tapped in
+                        if tapped {
+                            isSecondButtonDidTap = false
+                            viewModel.buttonDidTap(settings, model, isFirstButtonDidTap, isSecondButtonDidTap, defaultSettings)
+                        }
+                    }
                 
-                Button(action: {
-                    isFirstButtonDidTap.toggle()
-                },
-                       label: {
-                    Text(model.secondChoice.localized())
-                        .foregroundStyle( model.secondChoice == viewModel.configureButton(settings, model) ? .black : .white)
-                        .font(.system(size: 14, weight: .regular))
-                })
-                .scaledToFill()
-                .frame(width: 85, height: 50)
-                .background(
-                    RoundedRectangle(
-                        cornerRadius: 12,
-                        style: .continuous
-                    )
-                    .fill(model.secondChoice == viewModel.configureButton(settings, model)  ? Color.green : Color.red)
-                )
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+                Toggle("", isOn: $isSecondButtonDidTap)
+                 .toggleStyle(ColoredToggleStyle(
+                     label: model.secondChoice.localized(),
+                     offColor: .red
+                 ))
+                 .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
+                 .onChange(of: isSecondButtonDidTap) { tapped in
+                     if tapped {
+                         isFirstButtonDidTap = false
+                         viewModel.buttonDidTap(settings, model, isFirstButtonDidTap, isSecondButtonDidTap, defaultSettings)
+                     }
+                 }
             }
         }
         .background {
             Color.black.opacity(0.1)
         }
         .clipShape(RoundedRectangle(cornerRadius: 12))
+        .onAppear {
+            isFirstButtonDidTap = model.firstChoice == viewModel.configureButton(settings, model)
+            isSecondButtonDidTap = model.secondChoice == viewModel.configureButton(settings, model)
+        }
     }
 }

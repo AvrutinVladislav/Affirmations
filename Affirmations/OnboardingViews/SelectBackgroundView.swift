@@ -10,20 +10,20 @@ import SwiftUI
 struct SelectBackgroundView: View {
     @State private var showAffirmations = false
     @StateObject var viewModel = OnboardingViewModel()
+    @EnvironmentObject var defaultSettings: DefaultSettings
     
     var body: some View {
-        OnboardingBaseView(title: Titles.category.title.localized(),
+        OnboardingBaseView(title: Titles.backgroundColor.title.localized(),
                            firstButtonTitle: Background.blue.color.localized(),
                            secondButtonTitle: Background.red.color.localized(),
                            firstButtonAction: {
-            viewModel.selectCategory(Gender.male.gender.localized())
+            viewModel.selectBackgroundColor(Background.blue.color.localized(), defaultSettings)
             showAffirmations.toggle()
-            viewModel.firstLaunch()
-        },
+            viewModel.firstLaunch(defaultSettings) },
                            secondButtonAction: {
-            viewModel.selectCategory(Gender.female.gender.localized())
+            viewModel.selectBackgroundColor(Background.red.color.localized(), defaultSettings)
             showAffirmations.toggle()
-            viewModel.firstLaunch()
+            viewModel.firstLaunch(defaultSettings)
         })
         .navigationDestination(isPresented: $showAffirmations) {
             AffirmationsView()

@@ -6,11 +6,8 @@
 //
 
 import Foundation
-import SwiftUI
 
 class SettingsTableViewCellViewModel: ObservableObject {
-    
-    @AppStorage("language") var language: String = "en"
     
     func configureButton(_ settings: SettingsModel, _ cellModel: SettingsCellModel) -> String {
         switch cellModel.title {
@@ -25,33 +22,42 @@ class SettingsTableViewCellViewModel: ObservableObject {
         }
     }
     
-    func buttonDidTap(_ settings: SettingsModel, _ cellModel: SettingsCellModel, _ isFirstButtonDidTap: Bool) {
+    func buttonDidTap(_ settings: SettingsModel, _ cellModel: SettingsCellModel, _ isFirstButtonDidTap: Bool, _ isSecondButtonDidTap: Bool, _ defaultSettings: DefaultSettings) {
         switch cellModel.title {
         case .category:
             if isFirstButtonDidTap {
                 settings.category = .love
-            } else {
+                defaultSettings.category = Categories.love.description
+            }
+            else if isSecondButtonDidTap {
                 settings.category = .friendship
+                defaultSettings.category = Categories.friendship.description
             }
         case .gender:
             if isFirstButtonDidTap {
                 settings.gender = .male
-            } else {
+                defaultSettings.gender = Gender.male.gender
+            }
+            else if isSecondButtonDidTap {
                 settings.gender = .female
+                defaultSettings.gender = Gender.female.gender
             }
         case .backgroundColor:
             if isFirstButtonDidTap {
                 settings.backgroundColor = .blue
-            } else {
-                settings.backgroundColor = .red      
+                defaultSettings.backgroundColor = Background.blue.color
+            }
+            else if isSecondButtonDidTap {
+                settings.backgroundColor = .red
+                defaultSettings.backgroundColor = Background.red.color
             }
         case .language:
             if isFirstButtonDidTap {
-                language = Languages.eng.language
+                defaultSettings.language = LanguageKeys.eng
                 settings.language = .eng
             }
-            else {
-                language = Languages.rus.language
+            else if isSecondButtonDidTap {
+                defaultSettings.language = LanguageKeys.rus
                 settings.language = .rus
             }
         }

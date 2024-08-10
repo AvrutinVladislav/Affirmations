@@ -9,10 +9,6 @@ import Foundation
 import SwiftUI
 
 class AffirmationsViewModel: ObservableObject {
-    
-    @AppStorage("selectCategory") var category = ""
-    @AppStorage("selectGender") var gender = ""
-    @AppStorage("selectBackgroundColor") var backgroundColor = ""
 
     func selectCategory(_ settings: SettingsModel, _ affirmationsData: AffirmationsModel?) -> [String] {
         guard let data = affirmationsData else { return [] }
@@ -61,8 +57,7 @@ class AffirmationsViewModel: ObservableObject {
             return .male
         }
     }
-    
-    
+        
     func getBackgroundColor(from value: String) -> Background {
         switch value {
         case "Blue":

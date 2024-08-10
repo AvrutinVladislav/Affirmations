@@ -6,28 +6,22 @@
 //
 
 import Foundation
-import SwiftUI
 
 class OnboardingViewModel: ObservableObject {
     
-    @AppStorage("selectCategory") var selectCategory = ""
-    @AppStorage("selectGender") var selectGender = ""
-    @AppStorage("selectBackgroundColor") var selectBackgroundColor = ""
-    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
-    
-    func selectCategory(_ category: String) {
-        selectCategory = category
+    func selectCategory(_ category: String, _ defaultSettings: DefaultSettings) {
+        defaultSettings.category = category
     }
     
-    func selectGender(_ gender: String) {
-        selectGender = gender
+    func selectGender(_ gender: String, _ defaultSettings: DefaultSettings) {
+        defaultSettings.gender = gender
     }
     
-    func selectBackgroundColor(_ backgroundColor: String) {
-        selectBackgroundColor = backgroundColor
+    func selectBackgroundColor(_ backgroundColor: String, _ defaultSettings: DefaultSettings) {
+        defaultSettings.backgroundColor = backgroundColor
     }
     
-    func firstLaunch() {
-        isFirstLaunch.toggle()
+    func firstLaunch(_ defaultSettings: DefaultSettings) {
+        defaultSettings.isFirstLaunch.toggle()
     }
 }

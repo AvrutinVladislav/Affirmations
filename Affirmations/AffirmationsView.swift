@@ -9,15 +9,13 @@ import SwiftUI
 
 struct AffirmationsView: View {
     
-    @AppStorage("selectCategory") var category = ""
-    @AppStorage("selectGender") var gender = ""
-    @AppStorage("selectBackgroundColor") var backgroundColor = ""
-    
     @State private var moveToSettings = false
     
     @StateObject private var viewModel = AffirmationsViewModel()
     @StateObject private var settings = SettingsModel()
     @StateObject private var jsonProvider = JSONProvider()
+    
+    @EnvironmentObject var defaultSettings: DefaultSettings
     
     var body: some View {
         NavigationStack {
@@ -80,7 +78,10 @@ struct AffirmationsView: View {
                 .ignoresSafeArea()
         }
         .onAppear {
-            viewModel.configureSettings(settings, category, gender, backgroundColor)
+            viewModel.configureSettings(settings,
+                                        defaultSettings.category,
+                                        defaultSettings.gender,
+                                        defaultSettings.backgroundColor)
             jsonProvider.getData()
         }
     }

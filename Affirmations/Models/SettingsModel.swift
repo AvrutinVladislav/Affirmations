@@ -90,9 +90,9 @@ enum Languages: Hashable, CaseIterable, Equatable {
     var language: String {
         switch self {
         case .eng:
-            "en"
+            "Eng"
         case .rus:
-            "ru"
+            "Rus"
         }
     }
 }
